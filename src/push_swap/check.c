@@ -6,7 +6,7 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:38:14 by scely             #+#    #+#             */
-/*   Updated: 2024/01/11 12:00:30 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/18 09:57:24 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,17 @@ int check_numbers(char *str)
 	return (0);
 }
 
+int len_nbrs(char *nbrs)
+{
+	long	i;
+
+	i = ft_atol(nbrs);
+	if (i >= -2147483648 && i <= 2147483647)
+		return (0);
+	else
+		return (-1);		
+}
+
 int doublons(t_push **pileA)
 {
 	t_push *tempA;
@@ -49,16 +60,4 @@ int doublons(t_push **pileA)
 		tempA = tempA->next;
 	}
 	return (0);
-}
-
-int len_nbrs(char *nbrs)
-{
-	int	i;
-
-	i = ft_atol(nbrs);
-	if (i >= -2147483648 && i <= -2147483647)
-		return (0);
-	else
-		return (-1);
-		
 }

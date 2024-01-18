@@ -6,7 +6,7 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:33:22 by scely             #+#    #+#             */
-/*   Updated: 2024/01/11 12:07:03 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/17 16:51:27 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 typedef struct s_push
 {
 	int					content;
+	struct s_push		*prev;
 	struct s_push		*next;
 }	t_push;
 
-void	set_pile(t_push **pile_A, char **ac);
+int		set_pile(t_push **pile_A, char **ac, int i);
 void	print_pile_A(t_push *set_pile_A , char pile);
 t_push	*ft_lstlast_p(t_push *lst);
 t_push	*ft_lstnew_p(int content);

@@ -6,7 +6,7 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:39:11 by scely             #+#    #+#             */
-/*   Updated: 2024/01/11 11:54:03 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/18 09:56:02 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,43 +33,44 @@ void print_sort(int i)
 }
 int main(int ac, char **av)
 {
-	t_push **pileA;
-	t_push **pileB;
+	t_push	**pileA;
+	t_push	**pileB;
+	char	**temp;
+	int		i;
 	
+	i = 1;
 	if (ac == 1)
 		return (1);
 	pileA = malloc(sizeof(t_push));
 	*pileA = NULL;
 	pileB = malloc(sizeof(t_push));
 	*pileB = NULL;
-	set_pile(pileA, av);
-
-	for (int x = 0; av[x] != NULL; x++)
+	// verifie si les ARGS sont {" 3 2 1 5" 2 8} ou {"3 2 1 5"}
+	if (ft_strchr(av[1], 32) != 0 && av[2] != NULL)
+		return (printf("ERROR ARGS"), -1);
+	else if (ac == 2 && ft_strchr(av[1], 32) != 0)
+	{
+		av = ft_split(av[1], 32);
+		i = 0;
+	}
+	// mets les ARGS dans ma pile en faisant les verife et la print (a enlever pour le push)
+	if (set_pile(pileA, av, i) != 0)
+		return (printf("mauvaise liste\n"),-1);
+	else
+		print_pile_A(*pileA, 'A');
+	// verifie que j'ai qu'un seul element dans ma liste
+	if ((*pileA)->next == NULL)
+		return (0);
+	// verifie les doublons
+	if (doublons(pileA) != 0)
+		return (ft_putstr_fd("Error\n", 1), -1);
+	for (int x = 1; av[x] != NULL; x++)
 		printf("%s ", av[x]);
 	printf("\n");
-	print_pile_A(*pileA, 'A');
 	print_pile_A(*pileB, 'B');
-	// if (list_sorted(pileA) == 0)
-	//  		return (print_sort(list_sorted(pileA)), 1);
-	if (ac - 1 < 5)
-		sort_nbrs_small(pileA);
-	int i = 1;
-	while (av[i])
-	{
-			if (check_numbers(av[i]) != 0)
-				return (printf("mauvaise liste\n\n"));
-			i++;
-	}
-	// if (av[i])
-	// 	return (printf("pas bon"));
-	if (doublons(pileA) != 0)
-		return(printf("doublon\n\n"));
-	else
-		return(printf("c'est bon\n\n"));
-	// print_pile_A(*pileA, 'A');
-	// print_pile_A(*pileB, 'B');
-	// print_sort(list_sorted(pileA));
-
-	printf("\n\n");
+	//trie entre 2 et 3 elements
+	sort_nbrs_small(pileA);
+	print_pile_A(*pileA, 'A');
+	printf("\n");
 	return (0);
 }

@@ -6,13 +6,13 @@ COLOR_BOLD = \033[1m
 MAKEFLAGS += --no-print-directory
 
 
-NAME		:= push_swap
+NAME			:= push_swap
 
-SRC_DIR		:= src
-OBJ_DIR		:= obj
-SRCS		= $(PATH_LIBFT)  $(PUSH_SWAP_PATH)
-PATH_LIBFT 	= $(libft:%=src/libft/%)
-libft		= ft_isdigit.c ft_putchar_fd.c ft_strjoin.c ft_strtrim.c\
+SRC_DIR			:= src
+OBJ_DIR			:= obj
+SRCS			= $(PATH_LIBFT)  $(PUSH_SWAP_PATH)
+PATH_LIBFT		= $(libft:%=src/libft/%)
+libft			= ft_isdigit.c ft_putchar_fd.c ft_strjoin.c ft_strtrim.c\
 				ft_isprint.c ft_putendl_fd.c ft_strlcat.c ft_substr.c ft_atoi.c\
 				ft_itoa.c ft_putnbr_fd.c ft_strlcpy.c ft_tolower.c ft_bzero.c\
 				ft_memchr.c ft_putstr_fd.c ft_strlen.c ft_toupper.c ft_atol.c\
@@ -23,18 +23,19 @@ libft		= ft_isdigit.c ft_putchar_fd.c ft_strjoin.c ft_strtrim.c\
 				ft_lstmap_bonus.c  ft_lstsize_bonus.c ft_lstadd_front_bonus.c  ft_lstdelone_bonus.c\
 				ft_lstlast_bonus.c  ft_lstnew_bonus.c\
 
-PUSH_SWAP_PATH 	= $(push_swap:%=src/push_swap/%)
-push_swap 		=  mouv_p.c mouv_r.c mouv_rr.c mouv_s.c push_swap.c\
+PUSH_SWAP_PATH	= $(push_swap:%=src/push_swap/%)
+push_swap		=  mouv_p.c mouv_r.c mouv_rr.c mouv_s.c push_swap.c\
 				check.c push_swap_utils.c sort_nbrs_small.c\
 
-OBJS		:= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+include			=include/libft.h include/push_swap.h
+OBJS			:= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-#CFLAGS		:= -Wall -Wextra -Werror
-CFLAGS		+= -g
-CCFLAGS		:= -I include
+#CFLAGS			:= -Wall -Wextra -Werror
+CFLAGS			+= -g
+CCFLAGS			:= -I include
 
-RM			:= rm -rf
-DIR_DUP		= mkdir -p $(@D)
+RM				:= rm -rf
+DIR_DUP			= mkdir -p $(@D)
 
 all: $(NAME)
 
@@ -43,7 +44,7 @@ $(NAME): $(OBJS)
 		@$(CC) $(OBJS) -o $(NAME) 
 		@echo "$(COLOR_GREEN)$(COLOR_BOLD)Compilation fini 👍 $(COLOR_RESET)"
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(include)
 		@$(DIR_DUP)
 		@$(CC) $(CFLAGS) $(CCFLAGS) -c -o $@ $<
 
