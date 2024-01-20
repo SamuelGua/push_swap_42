@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
+/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:39:06 by scely             #+#    #+#             */
-/*   Updated: 2024/01/18 09:58:49 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/19 10:17:02 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_lstsize_p(t_push *lst)
+{
+	int		i;
+
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
+}
 
 t_push	*ft_lstlast_p(t_push *lst)
 {

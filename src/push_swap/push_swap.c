@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
+/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:39:11 by scely             #+#    #+#             */
-/*   Updated: 2024/01/18 09:56:02 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/20 19:46:15 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int main(int ac, char **av)
 {
 	t_push	**pileA;
 	t_push	**pileB;
-	char	**temp;
 	int		i;
 	
 	i = 1;
@@ -58,19 +57,46 @@ int main(int ac, char **av)
 		return (printf("mauvaise liste\n"),-1);
 	else
 		print_pile_A(*pileA, 'A');
-	// verifie que j'ai qu'un seul element dans ma liste
-	if ((*pileA)->next == NULL)
-		return (0);
-	// verifie les doublons
-	if (doublons(pileA) != 0)
-		return (ft_putstr_fd("Error\n", 1), -1);
-	for (int x = 1; av[x] != NULL; x++)
-		printf("%s ", av[x]);
-	printf("\n");
+	pb(pileA, pileB);
+	pb(pileA, pileB);
+	pb(pileA, pileB);
+	pb(pileA, pileB);
+	pb(pileA, pileB);
+	
+	custom(pileB);
+	printf("================\n");
 	print_pile_A(*pileB, 'B');
-	//trie entre 2 et 3 elements
-	sort_nbrs_small(pileA);
+	custom(pileB);
+	t_push *temp = *pileB;
+	for (int i = 0; temp != NULL; temp = temp->next)
+	{
+		printf("content = %i | mouv = %i | sens = %i\n", temp->content, temp->mouv, temp->sens);
+		i++;
+	}
+	temp = *pileA;
+	printf("================\n");
+	custom_A(pileA, pileB);
+	turk_sorting(pileA, pileB);
 	print_pile_A(*pileA, 'A');
-	printf("\n");
+	print_pile_A(*pileB, 'B');
+
+	for (int i = 0; temp != NULL; temp = temp->next)
+	{
+		printf("content = %i \t|target = %i \t| cost = %i \t| mouv = %i \t| closet = %i\n", temp->content, temp->target, temp->cost, temp->mouv, temp->closet);
+		i++;
+	}
+
+	
+	// if (list_sorted(pileA) == 0)
+	// 	return (printf("sorted"));
+	// // verifie les doublons
+	// if (doublons(pileA) != 0)
+	// 	return (ft_putstr_fd("Error\n", 1), -1);
+	// print_pile_A(*pileB, 'B');
+	// //trie entre 2 et 3 elements
+	// if (ac == 4)
+	// 	sort_nbrs_small(pileA);
+	// print_pile_A(*pileA, 'A');
+	// printf("\n");
 	return (0);
 }

@@ -25,13 +25,12 @@ libft			= ft_isdigit.c ft_putchar_fd.c ft_strjoin.c ft_strtrim.c\
 
 PUSH_SWAP_PATH	= $(push_swap:%=src/push_swap/%)
 push_swap		=  mouv_p.c mouv_r.c mouv_rr.c mouv_s.c push_swap.c\
-				check.c push_swap_utils.c sort_nbrs_small.c\
-
-include			=include/libft.h include/push_swap.h
+				check.c push_swap_utils.c sort_nbrs_small.c big_sort_un.c\
+				
 OBJS			:= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 #CFLAGS			:= -Wall -Wextra -Werror
-CFLAGS			+= -g
+CFLAGS			+= -g3
 CCFLAGS			:= -I include
 
 RM				:= rm -rf
@@ -44,7 +43,7 @@ $(NAME): $(OBJS)
 		@$(CC) $(OBJS) -o $(NAME) 
 		@echo "$(COLOR_GREEN)$(COLOR_BOLD)Compilation fini 👍 $(COLOR_RESET)"
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(include)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c include/libft.h include/push_swap.h
 		@$(DIR_DUP)
 		@$(CC) $(CFLAGS) $(CCFLAGS) -c -o $@ $<
 

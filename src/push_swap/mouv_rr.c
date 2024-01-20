@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv_rr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
+/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:49:02 by scely             #+#    #+#             */
-/*   Updated: 2024/01/09 16:23:54 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/19 09:18:59 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,30 @@ void	rrb(t_push **pile_b)
 
 void	rrr(t_push **pile_A, t_push **pile_B)
 {
-	ra(pile_A);
-	rb(pile_B);
+	t_push	*temp;
+	t_push	*lst;
+
+	if ((*pile_A)->next == NULL)
+		return ;
+	temp = (*pile_A);
+	while ((*pile_A)->next != NULL)
+	{
+		lst = (*pile_A);
+		(*pile_A) = (*pile_A)->next;
+	}
+	lst->next = NULL;
+	(*pile_A)->next = temp;
+	
+	if ((*pile_B)->next == NULL)
+		return ;
+	temp = (*pile_B);
+	while ((*pile_B)->next != NULL)
+	{
+		lst = (*pile_B);
+		(*pile_B) = (*pile_B)->next;
+	}
+	lst->next = NULL;
+	(*pile_B)->next = temp;
+	write(1, "rrr\n", 4);
+	
 }

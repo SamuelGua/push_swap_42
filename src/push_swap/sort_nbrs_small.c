@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_nbrs_small.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
+/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:50:35 by scely             #+#    #+#             */
-/*   Updated: 2024/01/18 10:01:13 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/19 09:52:49 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int list_sorted(t_push **pile)
 	t_push *temp;
 
 	temp = *pile;
+	if (temp->next == NULL)
+		return (0);
 	while (temp->next != NULL)
 	{
 		if (temp->content > temp->next->content)
