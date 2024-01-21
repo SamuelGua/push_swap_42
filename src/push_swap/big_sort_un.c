@@ -6,7 +6,7 @@
 /*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 10:06:17 by meca_971          #+#    #+#             */
-/*   Updated: 2024/01/20 19:49:07 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/21 15:18:22 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ void custom(t_push **pile)
 	int j;
 	t_push *temp;
 	
-	// if (temp->next == NULL)
-	// 	return ;
-	// rajouter une ligne pour  closet
+	// mouv et sens
 	j = 0;
 	temp  = (*pile);
 	i = ft_lstsize_p(*pile)/ 2;
@@ -92,7 +90,6 @@ void custom_A(t_push **pileA, t_push **pileB)
 	max = min_max(pileB, 0); 
 	min = min_max(pileB, 1);
 	custom(pileA);
-	// printf("min = %i | max = %i", min, max);
 	while (tempA != NULL)
 	{
 		// cherhe si le content du noeud  actuelle est le plus plus  grand ou
@@ -139,86 +136,76 @@ void	turk_sorting(t_push **pileA, t_push **pileB)
 {
 	t_push *tempA;
 	t_push *tempB;
-	int i = 0;
+	int i;
 
 	tempA = (*pileA);
-	tempB = (*pileB);
-	while (tempA->next != NULL)
+	tempB = (*pileA)->next;
+	while (tempB != NULL)
 	{
-		if (tempA->cost < tempA->next->cost)
+		if (tempA->cost < tempB->cost)
 			i = tempA->content;
-		tempA = tempA->next;
+		else
+			tempA = tempB;
+		tempB = tempB->next;
 	}
+
+	
 	tempA = (*pileA);
+	tempB = (*pileB);
 	while (tempA->content != i)
 		tempA = tempA->next;
-	while(tempA->target != tempB->content && tempB != NULL)
+	while(tempA->target != tempB->content && tempB != NULL)	
 		tempB = tempB->next;
+	
 	/*============MOUV=========*/
 		/*============meme sens 0=========*/
 	if (tempA->sens == tempB->sens && tempA->sens == 0)
 	{
-		if (tempA->mouv > tempB->mouv)
+		if (tempA->mouv >= tempB->mouv)
 		{
 			tempA->mouv -= tempB->mouv;
-			while(tempB->mouv > 0)
-			{
+			while(tempB->mouv-- > 0)
 				rr(pileA, pileB);
-				tempB->mouv--;
-			}
-			while(tempA->mouv > 0)
-			{
+			while(tempA->mouv-- > 0)
 				ra(pileA);
-				tempA->mouv--;
-			}
+			if (tempA->content < tempB->content && tempA->closet != 0)
+				rb(pileB);
 			pb(pileA, pileB);
 		}
-		if (tempA->mouv < tempB->mouv)
+		else if (tempA->mouv <= tempB->mouv)
 		{
 			tempA->mouv -= tempB->mouv;
-			while(tempA->mouv > 0)
-			{
+			while(tempA->mouv-- > 0)
 				rr(pileA, pileB);
-				tempA->mouv--;
-			}
-			while(tempB->mouv > 0)
-			{
+			while(tempB->mouv-- > 0)
 				rb(pileB);
-				tempB->mouv--;
-			}
+			if (tempA->content < tempB->content && tempA->closet != 0)
+				rb(pileB);
 			pb(pileA, pileB);
 		}
 	} else if (tempA->sens == tempB->sens && tempA->sens == 1)
-	/*============meme sens 1=========*/
+		/*============meme sens 1=========*/
 	{
-		if (tempA->mouv > tempB->mouv)
+		if (tempA->mouv >= tempB->mouv)
 		{
 			tempA->mouv -= tempB->mouv;
-			while(tempB->mouv > 0)
-			{
+			while(tempB->mouv-- > 0)
 				rrr(pileA, pileB);
-				tempB->mouv--;
-			}
-			while(tempA->mouv > 0)
-			{
+			while(tempA->mouv-- > 0)
 				rra(pileA);
-				tempA->mouv--;
-			}
+			if (tempA->content < tempB->content && tempA->closet != 0)
+				rb(pileB);
 			pb(pileA, pileB);
 		}
-		if (tempA->mouv < tempB->mouv)
+		else if (tempA->mouv <= tempB->mouv)
 		{
 			tempA->mouv -= tempB->mouv;
-			while(tempA->mouv > 0)
-			{
+			while(tempA->mouv-- > 0)
 				rrr(pileA, pileB);
-				tempA->mouv--;
-			}
-			while(tempB->mouv > 0)
-			{
+			while(tempB->mouv-- > 0)
 				rrb(pileB);
-				tempB->mouv--;
-			}
+			if (tempA->content < tempB->content && tempA->closet != 0)
+				rb(pileB);
 			pb(pileA, pileB);
 		}
 	} else if (tempA->sens != tempB->sens)
@@ -226,36 +213,24 @@ void	turk_sorting(t_push **pileA, t_push **pileB)
 	{
 		/*_________temp	A________*/
 		if (tempA->sens == 0)
-		{
-			while (tempA->mouv > 0)
-			{
+			while (tempA->mouv-- > 0)
 				ra(pileA);
-				tempA->mouv--;
-			}
-		} else 
-		{
-			while (tempA->mouv > 0)
-			{
+		else 
+			while (tempA->mouv-- > 0)
 				rra(pileA);
-				tempA->mouv--;
-			}
-		}
 		/*___________temp b_________*/
 		if (tempB->sens == 0)
-		{
-			while (tempB->mouv > 0)
-			{
-				ra(pileB);
-				tempB->mouv--;
-			}
-		} else 
-		{
-			while (tempB->mouv > 0)
-			{
-				rra(pileB);
-				tempB->mouv--;
-			}
-		}
+			while (tempB->mouv-- > 0)
+				rb(pileB);
+		else 
+			while (tempB->mouv-- > 0)
+				rrb(pileB);
+		// while (tempA->mouv-- > 0)
+		// 		ra(pileA);
+		// while (tempB->mouv-- > 0)
+		// 		rb(pileB);
+		//  if (tempA->content < tempB->content && tempA->closet != 0)
+		//  	rb(pileB);
 		pb(pileA, pileB);
 	}
 }

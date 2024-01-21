@@ -6,7 +6,7 @@
 /*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:49:02 by scely             #+#    #+#             */
-/*   Updated: 2024/01/19 09:18:59 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/21 15:13:07 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	rrb(t_push **pile_b)
 	}
 	lst->next = NULL;
 	(*pile_b)->next = temp;
-	write(1, "rra\n", 4);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_push **pile_A, t_push **pile_B)

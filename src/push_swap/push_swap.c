@@ -6,7 +6,7 @@
 /*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:39:11 by scely             #+#    #+#             */
-/*   Updated: 2024/01/20 19:46:15 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/21 15:08:11 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,36 +55,59 @@ int main(int ac, char **av)
 	// mets les ARGS dans ma pile en faisant les verife et la print (a enlever pour le push)
 	if (set_pile(pileA, av, i) != 0)
 		return (printf("mauvaise liste\n"),-1);
-	else
-		print_pile_A(*pileA, 'A');
+
+	(print_pile_A(*pileA, 'A'), print_pile_A(*pileB, 'B'));
+	printf("---------------------\n");
+
 	pb(pileA, pileB);
 	pb(pileA, pileB);
-	pb(pileA, pileB);
-	pb(pileA, pileB);
-	pb(pileA, pileB);
+	(print_pile_A(*pileA, 'A'), print_pile_A(*pileB, 'B'));
 	
-	custom(pileB);
-	printf("================\n");
-	print_pile_A(*pileB, 'B');
-	custom(pileB);
-	t_push *temp = *pileB;
-	for (int i = 0; temp != NULL; temp = temp->next)
+	int a = ft_lstsize_p(*pileA);
+	t_push *temp2 = (*pileA);
+
+	while (a > 3)
 	{
-		printf("content = %i | mouv = %i | sens = %i\n", temp->content, temp->mouv, temp->sens);
+		printf("---------------------- v\t%i\n", a);
+		custom(pileB);
+		custom_A(pileA, pileB);
+		for (int i = 0; temp2 != NULL; temp2 = temp2->next)
+		{
+		printf("content = %i \t|target = %i \t| cost = %i \t| mouv = %i \t| closet = %i\t| sens = %i\n", temp2->content, temp2->target, temp2->cost, temp2->mouv, temp2->closet, temp2->sens);
 		i++;
+		}
+			temp2 = (*pileB);
+		printf("++++++++++++++++++++++++++++++++++\n");
+		for (int i = 0; temp2 != NULL; temp2 = temp2->next)
+		{
+		printf("content = %i \t|target = %i \t| cost = %i \t| mouv = %i \t| closet = %i \t| sens = %i\n", temp2->content, temp2->target, temp2->cost, temp2->mouv, temp2->closet, temp2->sens);
+		i++;
+		}
+		turk_sorting(pileA, pileB);
+		(print_pile_A(*pileA, 'A'), print_pile_A(*pileB, 'B'));
+		clear_param(pileA);
+		clear_param(pileB);
+		a--;
+	temp2 = (*pileA);
+
 	}
-	temp = *pileA;
-	printf("================\n");
-	custom_A(pileA, pileB);
-	turk_sorting(pileA, pileB);
+	printf("---------------------\n");
+
+	// custom(pileB);
+	// printf("================\n");
+	// print_pile_A(*pileB, 'B');
+	// custom(pileB);
+	// printf("================\n");
+	// custom_A(pileA, pileB);
+	// turk_sorting(pileA, pileB);
 	print_pile_A(*pileA, 'A');
 	print_pile_A(*pileB, 'B');
-
-	for (int i = 0; temp != NULL; temp = temp->next)
-	{
-		printf("content = %i \t|target = %i \t| cost = %i \t| mouv = %i \t| closet = %i\n", temp->content, temp->target, temp->cost, temp->mouv, temp->closet);
-		i++;
-	}
+	// t_push *temp2 = (*pileA);
+	// for (int i = 0; temp2 != NULL; temp2 = temp2->next)
+	// {
+	// 	printf("content = %i \t|target = %i \t| cost = %i \t| mouv = %i \t| closet = %i\n", temp2->content, temp2->target, temp2->cost, temp2->mouv, temp2->closet);
+	// 	i++;
+	// }
 
 	
 	// if (list_sorted(pileA) == 0)
