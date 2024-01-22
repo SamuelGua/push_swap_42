@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv_r.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:46:26 by scely             #+#    #+#             */
-/*   Updated: 2024/01/19 09:17:43 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:21:36 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	rr(t_push **pile_A, t_push **pile_B)
 	(*pile_A)->next = NULL;
 	last->next = (*pile_A);
 	(*pile_A) = temp;
-	
-
 	if ((*pile_B)->next == NULL)
 		return ;
 	last = ft_lstlast_p(*pile_B);

@@ -1,0 +1,243 @@
+pb
+pb
+pb
+pb
+rr
+rb
+pb
+ra
+rrb
+rrb
+pb
+pb
+pb
+A | 3 5 48 62 9 41 51 84 849 874 49 84 812 556 80 487 
+B | 
+---------------------
+A | 48 62 9 41 51 84 849 874 49 84 812 556 80 487 
+B | 5 3 
+---------------------- v	14
+content = 48 	|target = 5 	| cost = 1 	| mouv = 0 	| closet = 0	| sens = 0
+content = 62 	|target = 5 	| cost = 2 	| mouv = 1 	| closet = 0	| sens = 0
+content = 9 	|target = 5 	| cost = 3 	| mouv = 2 	| closet = 0	| sens = 0
+content = 41 	|target = 5 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 0
+content = 51 	|target = 5 	| cost = 5 	| mouv = 4 	| closet = 0	| sens = 0
+content = 84 	|target = 5 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 0
+content = 849 	|target = 5 	| cost = 7 	| mouv = 6 	| closet = 0	| sens = 0
+content = 874 	|target = 5 	| cost = 8 	| mouv = 7 	| closet = 0	| sens = 1
+content = 49 	|target = 5 	| cost = 7 	| mouv = 6 	| closet = 0	| sens = 1
+content = 84 	|target = 5 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 1
+content = 812 	|target = 5 	| cost = 5 	| mouv = 4 	| closet = 0	| sens = 1
+content = 556 	|target = 5 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 1
+content = 80 	|target = 5 	| cost = 3 	| mouv = 2 	| closet = 0	| sens = 1
+content = 487 	|target = 5 	| cost = 2 	| mouv = 1 	| closet = 0	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 5 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 3 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 62 9 41 51 84 849 874 49 84 812 556 80 487 
+B | 48 5 3 
+---------------------- v	13
+content = 62 	|target = 48 	| cost = 1 	| mouv = 0 	| closet = 0	| sens = 0
+content = 9 	|target = 5 	| cost = 2 	| mouv = 1 	| closet = 4	| sens = 0
+content = 41 	|target = 48 	| cost = 3 	| mouv = 2 	| closet = 7	| sens = 0
+content = 51 	|target = 48 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 0
+content = 84 	|target = 48 	| cost = 5 	| mouv = 4 	| closet = 0	| sens = 0
+content = 849 	|target = 48 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 0
+content = 874 	|target = 48 	| cost = 7 	| mouv = 6 	| closet = 0	| sens = 0
+content = 49 	|target = 48 	| cost = 7 	| mouv = 6 	| closet = 0	| sens = 1
+content = 84 	|target = 48 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 1
+content = 812 	|target = 48 	| cost = 5 	| mouv = 4 	| closet = 0	| sens = 1
+content = 556 	|target = 48 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 1
+content = 80 	|target = 48 	| cost = 3 	| mouv = 2 	| closet = 0	| sens = 1
+content = 487 	|target = 48 	| cost = 2 	| mouv = 1 	| closet = 0	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 48 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 5 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 3 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 9 41 51 84 849 874 49 84 812 556 80 487 
+B | 62 48 5 3 
+---------------------- v	12
+content = 9 	|target = 5 	| cost = 3 	| mouv = 0 	| closet = 4	| sens = 0
+content = 41 	|target = 48 	| cost = 2 	| mouv = 1 	| closet = 7	| sens = 0
+content = 51 	|target = 48 	| cost = 3 	| mouv = 2 	| closet = 3	| sens = 0
+content = 84 	|target = 62 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 0
+content = 849 	|target = 62 	| cost = 5 	| mouv = 4 	| closet = 0	| sens = 0
+content = 874 	|target = 62 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 0
+content = 49 	|target = 48 	| cost = 8 	| mouv = 6 	| closet = 1	| sens = 1
+content = 84 	|target = 62 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 1
+content = 812 	|target = 62 	| cost = 5 	| mouv = 4 	| closet = 0	| sens = 1
+content = 556 	|target = 62 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 1
+content = 80 	|target = 62 	| cost = 3 	| mouv = 2 	| closet = 0	| sens = 1
+content = 487 	|target = 62 	| cost = 2 	| mouv = 1 	| closet = 0	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 62 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 48 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 5 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+content = 3 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 51 84 849 874 49 84 812 556 80 487 9 
+B | 41 5 3 62 48 
+---------------------- v	11
+content = 51 	|target = 48 	| cost = 2 	| mouv = 0 	| closet = 3	| sens = 0
+content = 84 	|target = 62 	| cost = 2 	| mouv = 1 	| closet = 0	| sens = 0
+content = 849 	|target = 62 	| cost = 3 	| mouv = 2 	| closet = 0	| sens = 0
+content = 874 	|target = 62 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 0
+content = 49 	|target = 48 	| cost = 6 	| mouv = 4 	| closet = 1	| sens = 0
+content = 84 	|target = 62 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 0
+content = 812 	|target = 62 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 1
+content = 556 	|target = 62 	| cost = 5 	| mouv = 4 	| closet = 0	| sens = 1
+content = 80 	|target = 62 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 1
+content = 487 	|target = 62 	| cost = 3 	| mouv = 2 	| closet = 0	| sens = 1
+content = 9 	|target = 5 	| cost = 3 	| mouv = 1 	| closet = 4	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 41 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 5 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 3 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 0
+content = 62 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+content = 48 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 849 874 49 84 812 556 80 487 9 51 
+B | 84 62 48 41 5 3 
+---------------------- v	10
+content = 849 	|target = 84 	| cost = 1 	| mouv = 0 	| closet = 0	| sens = 0
+content = 874 	|target = 84 	| cost = 2 	| mouv = 1 	| closet = 0	| sens = 0
+content = 49 	|target = 48 	| cost = 3 	| mouv = 2 	| closet = 1	| sens = 0
+content = 84 	|target = 62 	| cost = 4 	| mouv = 3 	| closet = 22	| sens = 0
+content = 812 	|target = 84 	| cost = 5 	| mouv = 4 	| closet = 0	| sens = 0
+content = 556 	|target = 84 	| cost = 6 	| mouv = 5 	| closet = 0	| sens = 1
+content = 80 	|target = 84 	| cost = 5 	| mouv = 4 	| closet = 4	| sens = 1
+content = 487 	|target = 84 	| cost = 4 	| mouv = 3 	| closet = 0	| sens = 1
+content = 9 	|target = 5 	| cost = 3 	| mouv = 2 	| closet = 4	| sens = 1
+content = 51 	|target = 48 	| cost = 4 	| mouv = 1 	| closet = 3	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 84 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 62 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 48 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 0
+content = 41 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 1
+content = 5 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+content = 3 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 874 49 84 812 556 80 487 9 51 
+B | 849 84 62 48 41 5 3 
+---------------------- v	9
+content = 874 	|target = 849 	| cost = 1 	| mouv = 0 	| closet = 0	| sens = 0
+content = 49 	|target = 48 	| cost = 4 	| mouv = 1 	| closet = 1	| sens = 0
+content = 84 	|target = 62 	| cost = 3 	| mouv = 2 	| closet = 22	| sens = 0
+content = 812 	|target = 849 	| cost = 4 	| mouv = 3 	| closet = 37	| sens = 0
+content = 556 	|target = 849 	| cost = 5 	| mouv = 4 	| closet = 293	| sens = 0
+content = 80 	|target = 84 	| cost = 6 	| mouv = 4 	| closet = 4	| sens = 1
+content = 487 	|target = 849 	| cost = 4 	| mouv = 3 	| closet = 362	| sens = 1
+content = 9 	|target = 5 	| cost = 3 	| mouv = 2 	| closet = 4	| sens = 1
+content = 51 	|target = 48 	| cost = 5 	| mouv = 1 	| closet = 3	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 849 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 84 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 62 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 0
+content = 48 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 0
+content = 41 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 1
+content = 5 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+content = 3 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 49 84 812 556 80 487 9 51 
+B | 874 849 84 62 48 41 5 3 
+-------------rrr
+rrr
+pb
+rrb
+rrb
+pb
+rb
+pb
+rrb
+rrb
+rrb
+rb
+pb
+rrb
+rrb
+pb
+--------- v	8
+content = 49 	|target = 48 	| cost = 5 	| mouv = 0 	| closet = 1	| sens = 0
+content = 84 	|target = 62 	| cost = 4 	| mouv = 1 	| closet = 22	| sens = 0
+content = 812 	|target = 849 	| cost = 3 	| mouv = 2 	| closet = 37	| sens = 0
+content = 556 	|target = 849 	| cost = 4 	| mouv = 3 	| closet = 293	| sens = 0
+content = 80 	|target = 84 	| cost = 7 	| mouv = 4 	| closet = 4	| sens = 1
+content = 487 	|target = 849 	| cost = 5 	| mouv = 3 	| closet = 362	| sens = 1
+content = 9 	|target = 5 	| cost = 3 	| mouv = 2 	| closet = 4	| sens = 1
+content = 51 	|target = 48 	| cost = 5 	| mouv = 1 	| closet = 3	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 874 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 849 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 84 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 0
+content = 62 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 0
+content = 48 	|target = 0 	| cost = 0 	| mouv = 4 	| closet = 0 	| sens = 1
+content = 41 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 1
+content = 5 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+content = 3 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 51 49 84 812 556 80 487 
+B | 9 5 3 874 849 84 62 48 41 
+---------------------- v	7
+content = 51 	|target = 48 	| cost = 3 	| mouv = 0 	| closet = 3	| sens = 0
+content = 49 	|target = 48 	| cost = 4 	| mouv = 1 	| closet = 1	| sens = 0
+content = 84 	|target = 62 	| cost = 6 	| mouv = 2 	| closet = 22	| sens = 0
+content = 812 	|target = 849 	| cost = 4 	| mouv = 3 	| closet = 37	| sens = 0
+content = 556 	|target = 849 	| cost = 8 	| mouv = 3 	| closet = 293	| sens = 1
+content = 80 	|target = 84 	| cost = 5 	| mouv = 2 	| closet = 4	| sens = 1
+content = 487 	|target = 849 	| cost = 6 	| mouv = 1 	| closet = 362	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 9 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 5 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 3 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 0
+content = 874 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 0
+content = 849 	|target = 0 	| cost = 0 	| mouv = 4 	| closet = 0 	| sens = 0
+content = 84 	|target = 0 	| cost = 0 	| mouv = 4 	| closet = 0 	| sens = 1
+content = 62 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 1
+content = 48 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+content = 41 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 49 84 812 556 80 487 
+B | 51 48 41 9 5 3 874 849 84 62 
+---------------------- v	6
+content = 49 	|target = 48 	| cost = 1 	| mouv = 0 	| closet = 1	| sens = 0
+content = 84 	|target = 62 	| cost = 3 	| mouv = 1 	| closet = 22	| sens = 0
+content = 812 	|target = 849 	| cost = 6 	| mouv = 2 	| closet = 37	| sens = 0
+content = 556 	|target = 849 	| cost = 4 	| mouv = 3 	| closet = 293	| sens = 1
+content = 80 	|target = 84 	| cost = 3 	| mouv = 2 	| closet = 4	| sens = 1
+content = 487 	|target = 849 	| cost = 4 	| mouv = 1 	| closet = 362	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 51 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 48 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 41 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 0
+content = 9 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 0
+content = 5 	|target = 0 	| cost = 0 	| mouv = 4 	| closet = 0 	| sens = 0
+content = 3 	|target = 0 	| cost = 0 	| mouv = 5 	| closet = 0 	| sens = 1
+content = 874 	|target = 0 	| cost = 0 	| mouv = 4 	| closet = 0 	| sens = 1
+content = 849 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 1
+content = 84 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+content = 62 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 84 812 556 80 487 
+B | 49 48 41 9 5 3 874 849 84 62 51 
+---------------------- v	5
+content = 84 	|target = 62 	| cost = 3 	| mouv = 0 	| closet = 22	| sens = 0
+content = 812 	|target = 849 	| cost = 6 	| mouv = 1 	| closet = 37	| sens = 0
+content = 556 	|target = 849 	| cost = 7 	| mouv = 2 	| closet = 293	| sens = 0
+content = 80 	|target = 84 	| cost = 3 	| mouv = 2 	| closet = 4	| sens = 1
+content = 487 	|target = 849 	| cost = 5 	| mouv = 1 	| closet = 362	| sens = 1
+++++++++++++++++++++++++++++++++++
+content = 49 	|target = 0 	| cost = 0 	| mouv = 0 	| closet = 0 	| sens = 0
+content = 48 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 0
+content = 41 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 0
+content = 9 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 0
+content = 5 	|target = 0 	| cost = 0 	| mouv = 4 	| closet = 0 	| sens = 0
+content = 3 	|target = 0 	| cost = 0 	| mouv = 5 	| closet = 0 	| sens = 0
+content = 874 	|target = 0 	| cost = 0 	| mouv = 5 	| closet = 0 	| sens = 1
+content = 849 	|target = 0 	| cost = 0 	| mouv = 4 	| closet = 0 	| sens = 1
+content = 84 	|target = 0 	| cost = 0 	| mouv = 3 	| closet = 0 	| sens = 1
+content = 62 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+content = 51 	|target = 0 	| cost = 0 	| mouv = 1 	| closet = 0 	| sens = 1
+A | 812 556 80 487 
+B | 84 62 51 49 48 41 9 5 3 874 849 84 
+---------------------- v	4
+content = 812 	|target = 849 	| cost = 3 	| mouv = 0 	| closet = 37	| sens = 0
+++++++++++++++++++++++++++++++++++
+content = 849 	|target = 0 	| cost = 0 	| mouv = 2 	| closet = 0 	| sens = 1
+A | 556 80 487 
+B | 812 849 84 84 62 51 49 48 41 9 5 3 874 
+---------------------
+A | 556 80 487 
+B | 812 849 84 84 62 51 49 48 41 9 5 3 874 

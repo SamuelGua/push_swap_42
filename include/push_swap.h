@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:33:22 by scely             #+#    #+#             */
-/*   Updated: 2024/01/20 19:45:17 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:16:57 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 
 typedef struct s_push
 {
-	int					content; // le nombre
-	int					cost; // pour le push dans la pileb et pour mettre dans la bonne position dans la pileb
-	int					mouv; // nombre de mouvement a effectuer
-	int					sens; // rr ou rrr
-	int					target; // ou va ton le mettre
+	int					content;
+	int					cost;
+	int					mouv;
+	int					sens;
+	int					target;
 	int					closet;
 	struct s_push		*prev;
 	struct s_push		*next;
 }	t_push;
 
 int		set_pile(t_push **pile_A, char **ac, int i);
-void	print_pile_A(t_push *set_pile_A , char pile);
+void	print_pile_A(t_push *set_pile_A, char pile);
 t_push	*ft_lstlast_p(t_push *lst);
 t_push	*ft_lstnew_p(int content);
 void	ft_lstadd_back_p(t_push **lst, t_push *new);
@@ -56,7 +56,7 @@ void	sort_nbrs_small(t_push **pile);
 int		doublons(t_push **pileA);
 int		len_nbrs(char *nbrs);
 /*===================================*/
-int check_numbers(char *str);
+int		check_numbers(char *str);
 /*===================================*/
 
 /*===================================*/
@@ -64,10 +64,6 @@ void	custom(t_push **pile);
 void	custom_A(t_push **pileA, t_push **pileB);
 void	clear_param(t_push **pile);
 void	turk_sorting(t_push **pileA, t_push **pileB);
-
-
 /*===================================*/
-
-
 
 #endif

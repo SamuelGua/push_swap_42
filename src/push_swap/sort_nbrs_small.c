@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   sort_nbrs_small.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:50:35 by scely             #+#    #+#             */
-/*   Updated: 2024/01/19 09:52:49 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:23:57 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-int list_sorted(t_push **pile)
+int	list_sorted(t_push **pile)
 {
-	t_push *temp;
+	t_push	*temp;
 
 	temp = *pile;
 	if (temp->next == NULL)
@@ -38,3 +37,15 @@ void	sort_nbrs_small(t_push **pile)
 	if (list_sorted(pile) == 0)
 		sa(pile);
 }
+
+// void	sort_nbrs_small_4(t_push **pileA, t_push **pileB)
+// {
+// 	int	i
+
+// 	i = 0;
+// 	pb(pileA, pileB);
+// 	sort_nbrs_small(pileA);
+// 	while()
+
+
+// }
