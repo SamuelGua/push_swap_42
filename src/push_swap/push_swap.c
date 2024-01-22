@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
+/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:39:11 by scely             #+#    #+#             */
-/*   Updated: 2024/01/22 17:57:40 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/22 22:36:30 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,35 +92,10 @@ int main(int ac, char **av)
 
 	}
 	sort_nbrs_small(pileA);
+	//final_sorting(pileA, pileB);
 	printf("---------------------\n");
 
-	// custom(pileB);
-	// printf("================\n");
-	// print_pile_A(*pileB, 'B');
-	// custom(pileB);
-	// printf("================\n");
-	// custom_A(pileA, pileB);
-	// turk_sorting(pileA, pileB);
 	print_pile_A(*pileA, 'A');
 	print_pile_A(*pileB, 'B');
-	// t_push *temp2 = (*pileA);
-	// for (int i = 0; temp2 != NULL; temp2 = temp2->next)
-	// {
-	// 	printf("content = %i \t|target = %i \t| cost = %i \t| mouv = %i \t| closet = %i\n", temp2->content, temp2->target, temp2->cost, temp2->mouv, temp2->closet);
-	// 	i++;
-	// }
-
-	
-	// if (list_sorted(pileA) == 0)
-	// 	return (printf("sorted"));
-	// // verifie les doublons
-	// if (doublons(pileA) != 0)
-	// 	return (ft_putstr_fd("Error\n", 1), -1);
-	// print_pile_A(*pileB, 'B');
-	// //trie entre 2 et 3 elements
-	// if (ac == 4)
-	// 	sort_nbrs_small(pileA);
-	// print_pile_A(*pileA, 'A');
-	// printf("\n");
 	return (0);
 }

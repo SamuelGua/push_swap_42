@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
+/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:33:22 by scely             #+#    #+#             */
-/*   Updated: 2024/01/22 18:16:57 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/22 22:20:31 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	custom(t_push **pile);
 void	custom_A(t_push **pileA, t_push **pileB);
 void	clear_param(t_push **pile);
 void	turk_sorting(t_push **pileA, t_push **pileB);
+void	final_sorting(t_push **pileA, t_push **pileB);
 /*===================================*/
 
 #endif

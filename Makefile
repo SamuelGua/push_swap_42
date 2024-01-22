@@ -52,7 +52,8 @@ clean:
 
 fclean: clean
 	@$(RM) $(OBJ_DIR) $(NAME)
+	
 
-#re:
-#	@$(MAKE) fclean
-#	@$(MAKE) all
+re:
+	@$(MAKE) fclean
+	@$(MAKE) all
