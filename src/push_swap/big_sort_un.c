@@ -6,7 +6,7 @@
 /*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 10:06:17 by meca_971          #+#    #+#             */
-/*   Updated: 2024/01/22 22:36:14 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/23 22:47:48 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void custom(t_push **pile)
 		j--;
 	}	
 }
+
 int min_max(t_push **pile, int value)
 {
 	t_push *temp;
@@ -77,7 +78,24 @@ int min_max(t_push **pile, int value)
 		}
 	return (i);	
 }
-void	custom_a_bis(t_push  *tempA, t_push	*tempB)
+
+void	custom_a_bis_zero(t_push  *tempA, t_push *tempB, int max)
+{
+	while (tempB->content != max)
+		tempB = tempB->next;
+	if (tempA->sens == tempB->sens)
+	{
+		if (tempA->mouv > tempB->mouv)
+			tempA->cost = tempA->mouv + 1;
+		else
+			tempA->cost = tempB->mouv + 1;
+	}
+	else
+		tempA->cost = tempA->mouv + tempB->mouv + 1;
+	tempA->target = max;
+}
+
+void	custom_a_bis_un(t_push  *tempA, t_push	*tempB)
 {
 	int	i;
 	
@@ -112,25 +130,21 @@ void custom_A(t_push **pileA, t_push **pileB)
 	int	min;
 	
 	tempA = (*pileA);
-	tempB = (*pileB);
-	max = min_max(pileB, 0); 
-	min = min_max(pileB, 1);
 	custom(pileA);
+	custom(pileB);
 	while (tempA != NULL)
 	{
+		max = min_max(pileB, 0); 
+		min = min_max(pileB, 1);
+		tempB = (*pileB);
 		if (tempA->content > max || tempA->content < min)
-		{
-			tempA->cost = tempA->mouv + 1;
-			tempA->target = max;		
-		}
+			custom_a_bis_zero(tempA, tempB, max);
 		else
-		{
-			custom_a_bis(tempA, tempB);
-			tempB = (*pileB);
-		}
+			custom_a_bis_un(tempA, tempB);
 		tempA = tempA->next;
 	}	
 }
+
 void	mouv_sens_zero(t_push *tempA, t_push *tempB, t_push **pileA, t_push **pileB)
 {
 	if (tempA->mouv >= tempB->mouv)
@@ -197,7 +211,7 @@ void	mouv_opposite(t_push *tempA, t_push *tempB, t_push **pileA, t_push **pileB)
 	  	rb(pileB);
 }
 
-int	find_less_cost(t_push **pileA, t_push **pileB)
+int	find_less_cost(t_push **pileA)
 {
 	t_push *tempA;
 	t_push *tempB;
@@ -230,7 +244,7 @@ void	turk_sorting(t_push **pileA, t_push **pileB)
 	t_push *tempB;
 	int 	i;
 
-	i = find_less_cost(pileA, pileB);
+	i = find_less_cost(pileA);
 	tempA = (*pileA);
 	tempB = (*pileB);
 	while (tempA->content != i)
@@ -248,14 +262,94 @@ void	turk_sorting(t_push **pileA, t_push **pileB)
 
 void	final_sorting(t_push **pileA, t_push **pileB)
 {
-	int	min;
-	int	middle;
-	int	max;
-	t_push *temp_c;
+	//int	max;
+	int	i;
+	t_push	*temp_a = (*pileA);
+	t_push	*temp_b = (*pileB);
 
-	temp_c = (*pileA);
-	min = (*pileA)->closet;
-	middle = (*pileA)->next->content;
-	max = (*pileA)->next->next->content;
+	custom(pileA);
+	custom(pileB);
 
+	//max = min_max(pileA, 1);
+
+	if  (temp_b->content > min_max(pileA, 0) || temp_b->content < min_max(pileA, 1))
+		temp_b->target = min_max(pileA, 0);
+	else
+	{
+		// while (temp_a != NULL)
+		// {
+		// 	i = temp_a->content - temp_b->content;
+		// 	if (i < 0)
+		// 		i *= -1;
+		// 	if ((temp_b->closet < i  || temp_b->closet == 0) && temp_b->content > temp_a->content)
+		// 		temp_b->closet = i;
+		// 	if ((temp_b->closet > i  || temp_b->closet == 0) && temp_b->content < temp_a->content)
+		// 	{
+		// 		temp_b->closet = i;
+		// 		max = temp_a->content;
+		// 	}
+		// 	temp_a = temp_a->next;
+		// }
+/*======================================================*/
+
+		while (temp_a != NULL)
+		{
+			i = temp_b->content - temp_a->content;
+			if (i < 0)
+				i *= -1;
+			if (temp_b->closet > i  || temp_b->closet == 0)
+			{
+				temp_b->closet = i;
+				temp_b->target = temp_a->content;
+			}
+			temp_a = temp_a->next;
+		}
+/*======================================================*/
+	}
+	temp_a = (*pileA);
+	while (temp_a->content != temp_b->target)
+		temp_a = temp_a->next;
+	if (temp_a->sens == temp_b->sens && temp_a->sens == 0)
+		mouv_sens_zero(temp_a, temp_b, pileA, pileB);
+	else if (temp_a->sens == temp_b->sens && temp_a->sens == 1)
+		mouv_sens_un(temp_a, temp_b, pileA, pileB);
+	else if (temp_a->sens != temp_b->sens)
+		mouv_opposite(temp_a, temp_b, pileA, pileB);
+	if (temp_a->content < temp_b->content)
+		ra(pileA);
+	pa(pileA, pileB);
+	(print_pile_A(*pileA, 'A'), print_pile_A(*pileB, 'B'));
+}
+
+void  all_insruction(t_push **pile_a, t_push **pile_b)
+{
+	t_push *temp_a;
+	
+	(pb(pile_a, pile_b), pb(pile_a, pile_b));
+	while (ft_lstsize_p(*pile_a) > 3)
+	{
+		custom_A(pile_a, pile_b);
+		turk_sorting(pile_a, pile_b);
+		clear_param(pile_a);
+		clear_param(pile_b);
+	}
+	temp_a = (*pile_a);
+	sort_nbrs_small(pile_a);
+	(print_pile_A(*pile_a, 'A'), print_pile_A(*pile_b, 'B'));
+	while (ft_lstsize_p((*pile_b)))
+		final_sorting(pile_a, pile_b);
+	temp_a = (*pile_a);
+	if( (*pile_b) == NULL)
+	{
+		custom(pile_a);
+		int c = min_max(pile_a, 1);
+		while (temp_a->content != c)
+			temp_a = temp_a->next;
+		if (temp_a->sens == 0)
+			while (temp_a->mouv--)
+				ra(pile_a);
+		else
+			while (temp_a->mouv--)
+				rra(pile_a);
+	}
 }

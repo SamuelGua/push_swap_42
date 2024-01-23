@@ -6,7 +6,7 @@
 /*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:33:22 by scely             #+#    #+#             */
-/*   Updated: 2024/01/22 22:20:31 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:37:25 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_push
 	int					sens;
 	int					target;
 	int					closet;
-	struct s_push		*prev;
 	struct s_push		*next;
 }	t_push;
 
@@ -65,6 +64,8 @@ void	custom_A(t_push **pileA, t_push **pileB);
 void	clear_param(t_push **pile);
 void	turk_sorting(t_push **pileA, t_push **pileB);
 void	final_sorting(t_push **pileA, t_push **pileB);
+int		min_max(t_push **pile, int value);
+void 	all_insruction(t_push **pile_a, t_push **pile_b);
 /*===================================*/
 
 #endif

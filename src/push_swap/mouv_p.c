@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
+/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:46:30 by scely             #+#    #+#             */
-/*   Updated: 2024/01/09 16:27:57 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/23 14:03:03 by meca_971         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	pa(t_push **pile_A, t_push **pile_B)
 {
 	t_push	*temp;
 
-	temp = (*pile_B)->next;
-	if ((*pile_B)->next == NULL)
+	if ((*pile_B) == NULL)
 		return ;
+	temp = (*pile_B)->next;
 	(*pile_B)->next = *pile_A;
 	(*pile_A) = (*pile_B);
 	*pile_B = temp;
@@ -29,9 +29,9 @@ void	pb(t_push **pile_A, t_push **pile_B)
 {
 	t_push	*temp;
 
-	temp = (*pile_A)->next;
-	if ((*pile_A)->next == NULL)
+	if ((*pile_A) == NULL)
 		return ;
+	temp = (*pile_A)->next;
 	(*pile_A)->next = *pile_B;
 	(*pile_B) = (*pile_A);
 	*pile_A = temp;

@@ -29,7 +29,7 @@ push_swap		=  mouv_p.c mouv_r.c mouv_rr.c mouv_s.c push_swap.c\
 				
 OBJS			:= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-#CFLAGS			:= -Wall -Wextra -Werror
+CFLAGS			:= -Wall -Wextra -Werror
 CFLAGS			+= -g3
 CCFLAGS			:= -I include
 
