@@ -6,7 +6,7 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:39:06 by scely             #+#    #+#             */
-/*   Updated: 2024/01/24 13:44:55 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/24 18:09:24 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_push	*ft_lstnew_p(int content)
 {
 	t_push	*new;
 
-	new = malloc(sizeof(t_push));
+	new = ft_calloc(sizeof(t_push), 1);
 	if (!new)
 		return (NULL);
 	new->content = content;
@@ -50,12 +50,12 @@ void	ft_lstadd_back_p(t_push **lst, t_push *new)
 {
 	t_push	*liste;
 
-	if (*lst)
+	if (*lst != NULL)
 	{
 		liste = ft_lstlast_p(*lst);
 		liste->next = new;
 	}
-	else
+	else if (*lst == NULL)
 		*lst = new;
 }
 
@@ -63,20 +63,4 @@ void	ft_lstadd_front_p(t_push **lst, t_push *new)
 {
 	new->next = *lst;
 	*lst = new;
-}
-
-int	set_pile(t_push **pile_A, char **av, int i)
-{
-	t_push	*list;
-
-	while (av[i])
-	{
-		if (check_numbers(av[i]) != 0 || len_nbrs(av[i]) != 0)
-			return (-1);
-		list = ft_lstnew_p(ft_atoi(av[i]));
-		list->next = NULL;
-		ft_lstadd_back_p(pile_A, list);
-		i++;
-	}
-	return (0);
 }
