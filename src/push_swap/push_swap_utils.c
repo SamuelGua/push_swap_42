@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:39:06 by scely             #+#    #+#             */
-/*   Updated: 2024/01/23 17:37:11 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:44:55 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	set_pile(t_push **pile_A, char **av, int i)
 
 	while (av[i])
 	{
-		if(check_numbers(av[i]) != 0 || len_nbrs(av[i]) != 0)
+		if (check_numbers(av[i]) != 0 || len_nbrs(av[i]) != 0)
 			return (-1);
 		list = ft_lstnew_p(ft_atoi(av[i]));
 		list->next = NULL;

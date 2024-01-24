@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouv_rr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: meca_971 <meca_971@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:49:02 by scely             #+#    #+#             */
-/*   Updated: 2024/01/21 15:13:07 by meca_971         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:36:58 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	rrr(t_push **pile_A, t_push **pile_B)
 	}
 	lst->next = NULL;
 	(*pile_A)->next = temp;
-	
 	if ((*pile_B)->next == NULL)
 		return ;
 	temp = (*pile_B);
@@ -75,5 +74,4 @@ void	rrr(t_push **pile_A, t_push **pile_B)
 	lst->next = NULL;
 	(*pile_B)->next = temp;
 	write(1, "rrr\n", 4);
-	
 }
