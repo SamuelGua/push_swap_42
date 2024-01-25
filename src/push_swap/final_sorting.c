@@ -6,7 +6,7 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:00:42 by scely             #+#    #+#             */
-/*   Updated: 2024/01/24 18:14:28 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/25 10:37:05 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	final_sorting(t_push **pileA, t_push **pileB)
 		mouv_un(temp_a, temp_b, pileA, pileB);
 	else if (temp_a->sens != temp_b->sens)
 		mouv_opp(temp_a, temp_b, pileA, pileB);
-	//if (temp_b->content > min_max(pileA, 1))
 	if (temp_a->content < temp_b->content)
 		ra(pileA);
 	pa(pileA, pileB);

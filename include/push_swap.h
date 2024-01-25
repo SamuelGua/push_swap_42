@@ -6,7 +6,7 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:33:22 by scely             #+#    #+#             */
-/*   Updated: 2024/01/24 15:59:15 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/25 15:28:57 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,12 @@ void	target_sorting(t_push *temp_a, t_push *temp_b);
 int		find_less_cost(t_push **pileA);
 void	final_sorting(t_push **pileA, t_push **pileB);
 int		min_max(t_push **pile, int value);
-void 	all_insruction(t_push **pile_a, t_push **pile_b);
+void	all_insruction(t_push **pile_a, t_push **pile_b);
 void	mouv_zero(t_push *tempA, t_push *tempB, t_push **pileA, t_push **pileB);
 void	mouv_un(t_push *tempA, t_push *tempB, t_push **pileA, t_push **pileB);
 void	mouv_opp(t_push *tempA, t_push *tempB, t_push **pileA, t_push **pileB);
-void	sort_four(t_push **pile_a, t_push **pile_b);
+void	sort_nbrs_small_2(t_push **pilea, t_push **pileb);
+void	free_lst(t_push **pile, t_push **pile_b, int i, char **av);
 
 /*===================================*/
 

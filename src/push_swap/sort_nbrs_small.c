@@ -6,7 +6,7 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:50:35 by scely             #+#    #+#             */
-/*   Updated: 2024/01/24 18:30:31 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/25 14:02:22 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,34 +30,38 @@ int	list_sorted(t_push **pile)
 
 void	sort_nbrs_small(t_push **pile)
 {
-
-	if (list_sorted(pile) != 0 && (*pile)->content > (*pile)->next->content)
-		sa(pile);
-	if (list_sorted(pile) != 0 && (*pile)->content < (*pile)->next->content)
+	if (min_max(pile, 0) == (*pile)->content)
+		ra(pile);
+	else if (min_max(pile, 0) == (*pile)->next->content)
 		rra(pile);
 	if (list_sorted(pile) != 0)
 		sa(pile);
 }
 
-void	sort_four(t_push **pile_a, t_push **pile_b)
+void	sort_nbrs_small_2(t_push **pilea, t_push **pileb)
 {
-	int		c;
-	t_push	*temp_a;
+	t_push	*temp;
+	int		i;
 
-	temp_a = (*pile_a);
-	pb(pile_a, pile_b);
-	sort_nbrs_small(pile_a);
-	final_sorting(pile_a, pile_b);
-	if ((*pile_b) == NULL)
+	i = 0;
+	temp = *pilea;
+	while (ft_lstsize_p(*pilea) > 3)
 	{
-		(custom(pile_a), c = min_max(pile_a, 1));
-		while (temp_a->content != c)
-			temp_a = temp_a->next;
-		if (temp_a->sens == 0)
-			while (temp_a->mouv--)
-				ra(pile_a);
+		custom(pilea);
+		i = min_max(pilea, 1);
+		while (temp->content != i)
+			temp = temp->next;
+		if (temp->sens == 0)
+			while (temp->mouv--)
+				ra(pilea);
 		else
-			while (temp_a->mouv--)
-				rra(pile_a);
+			while (temp->mouv--)
+				rra(pilea);
+		clear_param(pilea);
+		pb(pilea, pileb);
+		temp = (*pilea);
 	}
+	sort_nbrs_small(pilea);
+	while (ft_lstsize_p(*pileb) > 0)
+		pa(pilea, pileb);
 }

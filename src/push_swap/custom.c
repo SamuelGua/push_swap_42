@@ -6,11 +6,27 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:11:00 by meca_971          #+#    #+#             */
-/*   Updated: 2024/01/24 16:18:36 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/25 15:31:15 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_lst(t_push **pile, t_push **pile_b, int i, char **av)
+{
+	t_push	*temp_a;
+
+	while ((*pile) != NULL)
+	{
+		temp_a = (*pile)->next;
+		free((*pile));
+		(*pile) = temp_a;
+	}
+	if (i == 0)
+		ft_free(av);
+	free(pile_b);
+	free(pile);
+}
 
 void	custom(t_push **pile)
 {
