@@ -6,7 +6,7 @@
 /*   By: scely <scely@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:39:11 by scely             #+#    #+#             */
-/*   Updated: 2024/01/25 15:32:22 by scely            ###   ########.fr       */
+/*   Updated: 2024/01/26 16:28:31 by scely            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ int	main(int ac, char **av)
 	int		i;
 
 	i = 1;
-	if (ac == 1 || (ft_strchr(av[1], 32) != 0 && av[2] != NULL))
+	if (ac == 1)
+		return (0);
+	if ((ft_strchr(av[1], 32) != 0 && av[2] != NULL))
 		return (ft_putstr_fd("Error\n", 2), 1);
 	pile_a = ft_calloc(sizeof(t_push), 1);
 	pile_b = ft_calloc(sizeof(t_push), 1);
