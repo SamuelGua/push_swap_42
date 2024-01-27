@@ -33,8 +33,14 @@ int	check_numbers(char *str)
 int	len_nbrs(char *nbrs)
 {
 	long	i;
- if (ft_strlen(nbrs) > 11)
-			return (-1);
+
+	i = 0
+	if (nbrs[i] == '-' || nbrs[i] == '+')
+		i++;
+	while(nbrs[i] == 0)
+		i++;
+ 	if (ft_strlen(&nbrs[i]) > 11)
+		return (-1);
 	i = ft_atol(nbrs);
 	if (i >= -2147483648 && i <= 2147483647)
 		return (0);
