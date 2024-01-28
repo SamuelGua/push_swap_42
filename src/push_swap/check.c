@@ -34,7 +34,7 @@ int	len_nbrs(char *nbrs)
 {
 	long	i;
 
-	i = 0
+	i = 0;
 	if (nbrs[i] == '-' || nbrs[i] == '+')
 		i++;
 	while(nbrs[i] == 0)
